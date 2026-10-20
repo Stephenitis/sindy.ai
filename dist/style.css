@@ -6,3 +6,8 @@
 .word-force-case .casehero{display:block;width:100%;max-width:760px;height:280px;margin:0 auto;object-fit:contain}
 .word-force-case .casebody{margin-top:28px}
 @media(max-width:760px){.word-force-case .casehero{height:180px}.word-force-case .casebody{margin-top:20px}}
+
+.casefacts{flex-wrap:wrap;gap:24px 40px}
+.word-force-case .caseintro{max-width:none;padding-top:40px;padding-bottom:24px}
+.word-force-case .caseintro h1{font-size:clamp(32px,3.5vw,46px);letter-spacing:-1.7px;line-height:1.15;margin-top:24px}
+.word-force-case .casefacts{margin:24px 0}
