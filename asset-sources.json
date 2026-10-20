@@ -1,0 +1,11 @@
+{
+  "everfi": "https://everfi.com/",
+  "microsoft": "https://www.microsoft.com/en-us/",
+  "pokemon": "https://commons.wikimedia.org/wiki/File:International_Pok\u00e9mon_logo.svg",
+  "snorlaxPhoto": "https://theawesomer.com/pokemon-snorlax-bean-bag/377811/",
+  "cutout": {
+    "method": "built-in imagegen",
+    "prompt": "Remove only the white background to transparency; preserve Sindy and Snorlax, identity, pose, clothes and composition."
+  },
+  "accent": "R\u00e9sum\u00e9 heading blue #0b5394"
+}
