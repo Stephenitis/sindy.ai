@@ -17,3 +17,10 @@
 .casebody img{height:auto;display:block}
 .casehero.onoe-casehero{height:360px;max-width:760px;display:block;margin:0 auto;object-fit:cover;object-position:top}
 @media(max-width:760px){.casehero.onoe-casehero{height:220px}nav{gap:12px}nav .links{gap:14px}.brand{flex-shrink:0}.foot{flex-wrap:wrap}}
+
+/* Hero scroll cue */
+.work-arrow{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;margin-top:8px;border:1px solid #b9bbae;border-radius:50%;color:#252621;transition:background .22s,border-color .22s,color .22s}
+.work-arrow svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s ease}
+.work-arrow:hover,.work-arrow:focus-visible{background:#a33d26;border-color:#a33d26;color:#fff}
+.work-arrow:hover svg,.work-arrow:focus-visible svg{transform:translateY(3px)}
+@media(prefers-reduced-motion:reduce){.work-arrow,.work-arrow svg{transition:none}.work-arrow:hover svg,.work-arrow:focus-visible svg{transform:none}}
