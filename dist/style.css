@@ -125,3 +125,7 @@ header{position:sticky;top:0;z-index:20;background:#faf9f6f5;backdrop-filter:blu
   animation-delay: .15s;       /* Wait this long before drawing starts. */
 }
 .hero.hero-yarn .portrait-concept{animation-delay:7s}
+/* Bring the company shortcuts into view directly below the hero. */
+.hero.hero-yarn:has(.portrait-concept){padding-bottom:16px}
+#work>.sectionhead{padding:10px 0 12px}
+#work>.project-shortcuts{margin-top:0;margin-bottom:24px}
