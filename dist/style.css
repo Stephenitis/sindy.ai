@@ -192,3 +192,9 @@ header{position:sticky;top:0;z-index:20;background:#faf9f6f5;backdrop-filter:blu
 @media(max-width:760px){.about{grid-template-columns:1fr;gap:24px}}
 
 .about-bio p{font-size:17px;line-height:1.65;color:#676b60;margin:0 0 18px;max-width:48ch}.about-bio .eyebrow{margin-bottom:20px}.about-bio .about-intro{font-size:20px;line-height:1.5;color:#252621}.about-bio p:last-child{margin-bottom:0}
+
+/* Contact invitation lives directly beneath the map. */
+.about{align-items:start}.about-contact{padding:24px 0 0;margin-top:8px;border-top:1px solid #d4d6cc}.about-contact h2{font-size:clamp(26px,3vw,36px);line-height:1.2;margin:12px 0 16px}.about-contact p{font-size:15px;line-height:1.6;color:#676b60;margin:0 0 20px}.about-contact .contactlinks{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}.about-contact .contactlinks a{font-size:15px}.about-contact .eyebrow{font-size:12px}
+
+/* Balanced About columns and consistent biography typography. */
+#about.about{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px}#about .about-bio p{font-size:18px;line-height:1.65;font-weight:400;color:#454940;max-width:none;margin:0 0 22px}#about .about-bio .eyebrow{font-size:18px;line-height:1.4;letter-spacing:0;text-transform:none;font-weight:600;color:#252621;margin-bottom:22px}@media(max-width:760px){#about.about{grid-template-columns:1fr;gap:32px}}
