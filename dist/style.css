@@ -182,3 +182,13 @@ header{position:sticky;top:0;z-index:20;background:#faf9f6f5;backdrop-filter:blu
 .snorlax-seated-photo img{display:block;width:216.216%;max-width:none;height:auto;transform:translateX(-53.75%)}
 .smallwork .snorlax-seated-photo{width:100%;margin:0 0 16px}
 .smallwork .snorlax-seated-photo img{width:216.216%;max-width:none;height:auto;object-fit:initial}
+
+/* Transparent regional map spans the biography column above its text. */
+.about-map{display:block;width:100%;max-width:none;height:auto;margin:0 0 28px;background:transparent}}
+
+/* Biography and regional illustration sit side by side. */
+.about{grid-template-columns:1fr 1.2fr;gap:48px;align-items:center}
+.about-map{margin:0}
+@media(max-width:760px){.about{grid-template-columns:1fr;gap:24px}}
+
+.about-bio p{font-size:17px;line-height:1.65;color:#676b60;margin:0 0 18px;max-width:48ch}.about-bio .eyebrow{margin-bottom:20px}.about-bio .about-intro{font-size:20px;line-height:1.5;color:#252621}.about-bio p:last-child{margin-bottom:0}
