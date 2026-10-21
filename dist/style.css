@@ -198,3 +198,5 @@ header{position:sticky;top:0;z-index:20;background:#faf9f6f5;backdrop-filter:blu
 
 /* Balanced About columns and consistent biography typography. */
 #about.about{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px}#about .about-bio p{font-size:18px;line-height:1.65;font-weight:400;color:#454940;max-width:none;margin:0 0 22px}#about .about-bio .eyebrow{font-size:18px;line-height:1.4;letter-spacing:0;text-transform:none;font-weight:600;color:#252621;margin-bottom:22px}@media(max-width:760px){#about.about{grid-template-columns:1fr;gap:32px}}
+
+#about .about-tagline{font-size:clamp(28px,3.2vw,38px);line-height:1.18;letter-spacing:-.025em;font-weight:500;color:#252621;margin:0 0 26px}
