@@ -41,6 +41,22 @@ OpenAI Codex assisted with research, writing and editing HTML/CSS/JavaScript, br
 
 The main lesson: AI accelerated iteration, but clear direction, source checks, and human visual review were essential to the final result.
 
+### Recorded time and token usage
+
+The October 20, 2026 process audit recorded these checkpoints:
+
+| Measurement | Recorded amount | Scope |
+| --- | ---: | --- |
+| Elapsed collaboration | ~3 hours 40 minutes | Earlier checkpoint; later work continued |
+| Chats and delegated agents | 283.26M tokens | Six main chats and ten agents, through approximately 8:48 p.m. Eastern |
+| Automatic reviews | ~41.44M additional tokens | Estimated across 40 review sessions |
+| Combined total | ~324.70M tokens | Provisional total including reviews |
+| Cached input | ~317.19M tokens | Reused context; about 97.8% of input |
+| Uncached input | ~7.10M tokens | Input not counted as cached |
+| Output | 414,390 tokens | Includes reasoning tokens |
+
+These are historical session-counter snapshots, **not a final project duration, bill, or subscription-usage calculation**. The time and token checkpoints cover different scopes. Voice and image-generation usage may be missing. See [the detailed metrics and efficiency notes](docs/process-metrics.md) for the workstream breakdown and limitations.
+
 ## Run on Windows
 
 1. Click **Code → Download ZIP** on this repository (or clone it with Git).
