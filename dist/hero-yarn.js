@@ -1,1 +1,44 @@
-(()=>{const hero=document.querySelector('.hero-yarn'),svg=hero.querySelector('.yarn-drawing'),path=svg.querySelector('path');function draw(){const h=hero.getBoundingClientRect(),w=hero.querySelector('.write-word').getBoundingClientRect(),p=hero.querySelector('.portrait').getBoundingClientRect();svg.setAttribute('viewBox',`0 0 ${h.width} ${h.height}`);const startX=w.right-h.left+5,startY=w.top-h.top+w.height*.55,endX=p.left-h.left+30;const space=Math.max(30,endX-startX),cx=startX+space*.5,cy=startY,rx=Math.min(60,space*.45),ry=40;let d=`M${startX} ${startY}`;let seed=83;const rand=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};let previous={x:cx,y:cy,rx:rx*.7,ry:ry*.8};for(let loop=0;loop<24;loop++){const next={x:cx+(rand()-.5)*rx*.9,y:cy+(rand()-.5)*ry*.8,rx:rx*(.28+rand()*.75),ry:ry*(.3+rand()*.85)};for(let j=0;j<36;j++){const u=j/36,k=u*u*(3-2*u),t=(loop+u)*Math.PI*2;const x=previous.x+(next.x-previous.x)*k+(previous.rx+(next.rx-previous.rx)*k)*Math.cos(t+.3*Math.sin(t*.23));const y=previous.y+(next.y-previous.y)*k+(previous.ry+(next.ry-previous.ry)*k)*Math.sin(t+.25*Math.cos(t*.31));d+=` L${x.toFixed(2)} ${y.toFixed(2)}`;}previous=next;}d+=` C${cx+rx} ${cy+ry} ${endX-30} ${cy+30} ${p.left-h.left+p.width*.55} ${p.top-h.top+p.height*.65}`;path.setAttribute('d',d)}document.fonts.ready.then(draw);window.addEventListener('resize',draw)})();
+(() => {
+  const hero = document.querySelector('.hero-yarn');
+  if (!hero) return;
+  const svg = hero.querySelector('.yarn-drawing');
+  const path = svg.querySelector('.yarn-path');
+
+  function draw() {
+    const h = hero.getBoundingClientRect();
+    const w = hero.querySelector('.complex-word').getBoundingClientRect();
+    const p = hero.querySelector('.portrait').getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${h.width} ${h.height}`);
+    // Anchor the loose tangle to the x, with room for each loop to breathe.
+    const cx = w.right - h.left - w.width * .08;
+    const cy = w.top - h.top + w.height * .55;
+    const scale = Math.min(1, w.width / 145);
+    const point = (x, y) => `${(cx + x * scale).toFixed(2)} ${(cy + y * scale).toFixed(2)}`;
+    const curves = [
+      [-78,-35, -25,-65, 14,-39],
+      [55,-10, -47,27, -66,4],
+      [-89,-24, 41,-64, 70,-35],
+      [100,-5, -16,51, -43,26],
+      [-73,-2, 42,-35, 83,-13],
+      [113,12, -7,73, -43,48],
+      [-72,24, 30,-22, 60,0],
+      [91,23, 21,61, 0,38],
+      [-25,9, 62,-51, 76,-31],
+      [98,0, -65,65, -84,39],
+      [-105,12, 24,-5, 50,28],
+      [78,64, -18,68, -24,42],
+      [-32,10, 57,2, 83,35]
+    ];
+    let d = `M ${point(-93,-20)}`;
+    for (const c of curves) d += ` C ${point(c[0],c[1])} ${point(c[2],c[3])} ${point(c[4],c[5])}`;
+    d += ` C ${point(110,52)} ${p.left-h.left-15} ${cy+95} ${p.left-h.left+p.width*.55} ${p.top-h.top+p.height*.65}`;
+    path.setAttribute('d', d);
+    const gradient = svg.querySelector('linearGradient');
+    gradient.setAttribute('x1', cx);
+    gradient.setAttribute('y1', cy);
+    gradient.setAttribute('x2', p.left-h.left+p.width*.55);
+    gradient.setAttribute('y2', p.top-h.top+p.height*.65);
+  }
+  document.fonts.ready.then(draw);
+  window.addEventListener('resize', draw);
+})();
