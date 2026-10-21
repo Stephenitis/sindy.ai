@@ -16,7 +16,7 @@ A responsive portfolio built with HTML, CSS, and JavaScript. No dependency insta
 
 ## How this site was made
 
-This portfolio grew through a hands-on collaboration with Sindy and her collaborators: gather existing work, shape the stories, build a working site, review it in the browser, and refine the details. The result is a lightweight static website with project case studies, a personal Beyond Work page, and supporting project resources.
+This portfolio grew through a hands-on collaboration with Sindy Huang and Stephen Nguyen: gather existing work, shape the stories, build a working site, review it in the browser, and refine the details. The result is a lightweight static website with project case studies, a personal Beyond Work page, and supporting project resources.
 
 ### Where the material came from
 
@@ -25,7 +25,7 @@ This portfolio grew through a hands-on collaboration with Sindy and her collabor
 - **Public references:** [Onoe Dance](https://onoedance.com/performances-and-events/) and [Onoe-ryū](https://onoe-ryu.com/about_eg/) helped clarify the dance tradition and the school’s performance history. Public brand and product imagery sources are recorded in [asset-sources.json](asset-sources.json).
 - **The working site:** local previews and published pages were inspected to check layout, navigation, image crops, and deployment results. GitHub became the primary source for the finished files.
 
-These were reference inputs for building the portfolio, not a live data feed. Personal claims supplied by the collaborators and facts about an organization’s wider history were kept distinct.
+These were reference inputs for building the portfolio, not a live data feed. Personal claims supplied by Sindy and Stephen and facts about an organization’s wider history were kept distinct.
 
 ### What AI contributed
 
@@ -90,4 +90,4 @@ Any static hosting service can serve `dist/`. No install or build is needed. Ext
 
 ## Credits
 
-Project contributions and biographical details are supplied by Sindy and her collaborators. Client marks and project imagery remain the property of their respective owners. Font licenses are included alongside the font assets.
+Project contributions and biographical details are supplied by Sindy Huang and Stephen Nguyen. Client marks and project imagery remain the property of their respective owners. Font licenses are included alongside the font assets.
