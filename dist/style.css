@@ -52,13 +52,76 @@ header{position:sticky;top:0;z-index:20;background:#faf9f6f5;backdrop-filter:blu
 
 .hero.hero-yarn:has(.portrait-concept){display:grid;grid-template-columns:minmax(0,1fr) 300px;position:relative;isolation:isolate;gap:24px;padding-bottom:65px}.hero-yarn .yarn-underlay{position:absolute;z-index:-1;width:100%;height:100%;object-fit:contain;left:0;top:0;opacity:.12;pointer-events:none}.hero.hero-yarn>div:first-of-type{position:relative;z-index:1}.hero.hero-yarn .portraitblock:has(.portrait-concept){margin:0;align-self:end}.hero.hero-yarn .portrait-concept{aspect-ratio:1;height:340px;object-fit:contain;mix-blend-mode:normal;filter:drop-shadow(3px 0 0 #0b5394);mask-image:linear-gradient(#000 88%,transparent)}@media(max-width:760px){.hero.hero-yarn:has(.portrait-concept){grid-template-columns:1fr}.hero.hero-yarn .portraitblock:has(.portrait-concept){max-width:300px;justify-self:end}.hero-yarn .yarn-underlay{object-fit:cover;opacity:.09}}
 
-.hero-yarn .yarn-drawing{position:absolute;inset:0;width:100%;height:100%;z-index:-1;overflow:visible;pointer-events:none}.yarn-path{fill:none;stroke:#0b5394;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.4;stroke-dasharray:1;stroke-dashoffset:1;animation:unravel-line 4s ease-in-out 2s forwards}.hero.hero-yarn .portrait-concept{filter:none}@keyframes unravel-line{to{stroke-dashoffset:0}}@media(prefers-reduced-motion:reduce){.yarn-path{animation:none;stroke-dashoffset:0}}@media(max-width:760px){.hero-yarn .yarn-drawing{opacity:.5}}
+/* SCRIBBLE GUIDE
+   Thickness, visibility, and drawing speed are controlled here in CSS.
+   Move or reshape the loops in hero-yarn.js (cx, cy, scale, and curves).
+   Change the three gradient colors in index.html (#yarn-gradient).
+   Some styles below are earlier versions: the later overrides set the final look.
+*/
+.hero-yarn .yarn-drawing {
+  position: absolute; /* Place the drawing over the hero section. */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;        /* Keep the line behind the text and portrait. */
+  overflow: visible; /* Let loops extend beyond the drawing's edges. */
+  pointer-events: none; /* Let clicks pass through to links underneath. */
+}
+/* Base line settings. Final thickness, opacity, speed, and color are below. */
+.yarn-path {
+  fill: none;              /* Draw a line without filling the loops. */
+  stroke: #0b5394;         /* Base blue; the gradient overrides this below. */
+  stroke-width: 2;         /* Earlier thickness; final value is 1.65 below. */
+  stroke-linecap: round;   /* Rounded line ends. */
+  stroke-linejoin: round;  /* Rounded joins between segments. */
+  opacity: .4;            /* Earlier visibility; final value is .8 below. */
+  stroke-dasharray: 1;     /* One dash covers the SVG's normalized path length. */
+  stroke-dashoffset: 1;    /* Start with that dash hidden. */
+  animation: unravel-line 4s ease-in-out 2s forwards;
+  /* Reveal the line smoothly and keep it visible afterward.
+     Later rules change the duration to 7s and the delay to .15s. */
+}
+.hero.hero-yarn .portrait-concept{filter:none}
+/* Moving the dash into view makes the line look like it is being drawn. */
+@keyframes unravel-line {
+  to { stroke-dashoffset: 0; }
+}
+/* Show the completed line immediately for people who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .yarn-path { animation: none; stroke-dashoffset: 0; }
+}
+@media(max-width:760px){.hero-yarn .yarn-drawing{opacity:.5}}
 
-.hero-yarn .yarn-path{stroke-width:1.3;opacity:.55;animation-duration:5s}.hero.hero-yarn .portrait-concept{animation:portrait-edge 1.2s ease 6s both}@keyframes portrait-edge{from{filter:drop-shadow(0 0 0 transparent)}to{filter:drop-shadow(1.5px 0 0 #0b5394) drop-shadow(-1.5px 0 0 #0b5394) drop-shadow(0 -1.5px 0 #0b5394)}}@media(prefers-reduced-motion:reduce){.hero.hero-yarn .portrait-concept{animation:none;filter:drop-shadow(1px 0 0 #0b5394)}}@media(max-width:760px){.hero-yarn .yarn-drawing{display:none}}
 
-.hero-yarn .yarn-path{stroke-width:1.5;opacity:.42;animation-duration:7s}.hero.hero-yarn .portrait-concept{animation-delay:8s}
-.hero-yarn .yarn-path{stroke-width:1.65;opacity:.8}
+/* Earlier experiment; the later settings below override these values. */
+.hero-yarn .yarn-path { stroke-width: 1.3; opacity: .55; animation-duration: 5s; }
+.hero.hero-yarn .portrait-concept{animation:portrait-edge 1.2s ease 6s both}@keyframes portrait-edge{from{filter:drop-shadow(0 0 0 transparent)}to{filter:drop-shadow(1.5px 0 0 #0b5394) drop-shadow(-1.5px 0 0 #0b5394) drop-shadow(0 -1.5px 0 #0b5394)}}@media(prefers-reduced-motion:reduce){.hero.hero-yarn .portrait-concept{animation:none;filter:drop-shadow(1px 0 0 #0b5394)}}
+/* Hide the scribble on screens 760px wide or smaller. */
+@media (max-width: 760px) {
+  .hero-yarn .yarn-drawing { display: none; }
+}
+
+
+
+.hero-yarn .yarn-path {
+  stroke-width: 1.5;       /* Overridden by 1.65 below. */
+  opacity: .42;           /* Overridden by .8 below. */
+  animation-duration: 7s; /* EDIT SPEED HERE: smaller number = faster drawing. */
+}
+.hero.hero-yarn .portrait-concept{animation-delay:8s}
+
+/* EDIT THE LINE'S APPEARANCE HERE: these are the final values. */
+.hero-yarn .yarn-path {
+  stroke-width: 1.65; /* Higher = thicker; lower = thinner. */
+  opacity: .8;       /* 0 = invisible, 1 = fully opaque. */
+}
+
 
 .footer-secrets{display:flex;justify-content:flex-end;gap:12px;padding-bottom:22px}.footer-secrets a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;font-size:22px}.footer-secrets a:hover{transform:translateY(-2px)}.footer-secrets a:focus-visible{outline:2px solid #0b5394;outline-offset:2px}
 
-.complex-word{color:#ad514a}.hero-yarn .yarn-path{stroke:url(#yarn-gradient);animation-delay:.15s}.hero.hero-yarn .portrait-concept{animation-delay:7s}
+.complex-word{color:#ad514a}
+.hero-yarn .yarn-path {
+  stroke: url(#yarn-gradient); /* Red-to-purple-to-blue colors from index.html. */
+  animation-delay: .15s;       /* Wait this long before drawing starts. */
+}
+.hero.hero-yarn .portrait-concept{animation-delay:7s}
