@@ -125,7 +125,12 @@ header{position:sticky;top:0;z-index:20;background:#faf9f6f5;backdrop-filter:blu
   animation-delay: .15s;       /* Wait this long before drawing starts. */
 }
 .hero.hero-yarn .portrait-concept{animation-delay:7s}
-/* Bring the company shortcuts into view directly below the hero. */
-.hero.hero-yarn:has(.portrait-concept){padding-bottom:16px}
-#work>.sectionhead{padding:10px 0 12px}
-#work>.project-shortcuts{margin-top:0;margin-bottom:24px}
+
+/* Vector dot above the dotless i: consistent color on iOS and desktop. */
+.brand.signature .signature-star{display:block;width:.36em;height:.36em;font-size:inherit;left:65%;top:calc(.12em + 3px);transform:translateX(-50%);color:#0b5394;overflow:visible}
+.brand.signature:hover .signature-star{transform:translateX(-50%) rotate(90deg)}
+@media(prefers-reduced-motion:reduce){.brand.signature:hover .signature-star{transform:translateX(-50%)}}
+
+/* Show the handwritten word immediately, without the reveal animation or masks. */
+.write-word .ink-reveal{animation:none;stroke-dashoffset:0}
+.write-word .ink-letters text{mask:none}
