@@ -153,3 +153,11 @@ header{position:sticky;top:0;z-index:20;background:#faf9f6f5;backdrop-filter:blu
 .complex-blocky>span:nth-child(5){transform:translateY(-.036em) rotate(-6deg)}
 .complex-blocky>span:nth-child(6){transform:translateY(.018em) rotate(4deg)}
 .complex-blocky>span:nth-child(7){transform:rotate(-5deg)}
+
+/* Equal headline rows; the oversized handwriting does not stretch line spacing. */
+.hero .hero-headline{font-size:clamp(36px,4.6vw,58px);letter-spacing:-.025em;line-height:1.4}
+.hero-headline .headline-line{display:block;white-space:nowrap;min-height:1.4em}
+.hero-headline .complex-blocky{letter-spacing:-.015em}
+.hero-headline .write-word{position:relative;width:4.3em;height:1em;vertical-align:baseline;margin-left:.12em;transform:rotate(-4deg)}
+.hero-headline .write-word svg{position:absolute;left:0;top:-.36em;width:100%;height:1.7em}
+@media(max-width:760px){.hero .hero-headline{font-size:clamp(29px,7.8vw,46px);letter-spacing:-.02em}}
