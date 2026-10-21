@@ -13,3 +13,26 @@
 .beyond-copy{min-width:0}
 .beyond-copy .write-word{width:9.9em;height:3.45em;max-width:100%;color:#dc8297;vertical-align:0;margin:0}
 @media(max-width:760px){.beyond-hero{grid-template-columns:1fr}.beyond-copy .write-word{height:auto;aspect-ratio:3.3/1.15}}
+
+/* Personal craft story: readable paragraphs beside the dance portrait. */
+.dance-note>p:not(.eyebrow){font-size:17px;line-height:1.65;max-width:38em;margin:0 0 18px;color:#606358}
+.dance-note .school-context{font-size:15px}
+.dance-note .textlink{font-size:15px;margin-bottom:24px}
+
+
+/* Place the enlarged portrait behind the headline, rather than centering it beside the whole story. */
+.beyond-hero{display:block;position:relative;isolation:isolate;min-height:740px}
+.beyond-copy{position:relative;z-index:1}
+.beyond-copy h1{width:76%;max-width:850px}
+.beyond-copy .beyond-lead,.beyond-copy .dance-note{max-width:46%}
+.beyond-hero .dance-portrait{position:absolute;z-index:0;top:12px;right:-12px;width:59%;pointer-events:none}
+.beyond-hero .dance-stage{max-width:none;padding:0}
+.beyond-hero .dance-stage img{width:100%;height:700px;object-fit:contain}
+.beyond-copy .write-word{overflow:visible}
+@media(max-width:760px){
+ .beyond-hero{padding-top:36px}
+ .beyond-copy h1{width:100%;margin-bottom:290px}
+ .beyond-copy .beyond-lead,.beyond-copy .dance-note{max-width:100%}
+ .beyond-hero .dance-portrait{top:100px;right:-8px;width:82%;max-width:430px}
+ .beyond-hero .dance-stage img{height:430px;max-height:none}
+}
