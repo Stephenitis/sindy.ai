@@ -36,3 +36,7 @@
  .beyond-hero .dance-portrait{top:100px;right:-8px;width:82%;max-width:430px}
  .beyond-hero .dance-stage img{height:430px;max-height:none}
 }
+
+/* Bring the story directly beneath the headline after removing the introduction. */
+.beyond-copy .dance-note{margin-top:0}
+.beyond-copy .dance-note h2{margin-bottom:20px}
