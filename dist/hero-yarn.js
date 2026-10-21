@@ -24,7 +24,8 @@
     // Subtract the hero's position to get coordinates within the hero section.
     // Add to cx to move right; add to cy to move down.
     const cx = w.right - h.left - w.width * .08;
-    const cy = w.top - h.top + w.height * .55;
+    // Lower the loops 18px so the red starting strand sits behind the letters.
+    const cy = w.top - h.top + w.height * .55 + 18;
     // SIZE: shrink when the word is narrower than 145px; otherwise use full size.
     // Multiply this expression by 1.2 for 20% larger, or .8 for 20% smaller.
     const scale = Math.min(1, w.width / 145);

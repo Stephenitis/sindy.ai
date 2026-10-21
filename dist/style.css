@@ -127,10 +127,29 @@ header{position:sticky;top:0;z-index:20;background:#faf9f6f5;backdrop-filter:blu
 .hero.hero-yarn .portrait-concept{animation-delay:7s}
 
 /* Vector dot above the dotless i: consistent color on iOS and desktop. */
-.brand.signature .signature-star{display:block;width:.36em;height:.36em;font-size:inherit;left:65%;top:calc(.12em + 3px);transform:translateX(-50%);color:#0b5394;overflow:visible}
+.brand.signature .signature-star{display:block;width:.36em;height:.36em;font-size:inherit;left:calc(65% + 3px);top:calc(.12em + 5px);transform:translateX(-50%);color:#0b5394;overflow:visible}
 .brand.signature:hover .signature-star{transform:translateX(-50%) rotate(90deg)}
 @media(prefers-reduced-motion:reduce){.brand.signature:hover .signature-star{transform:translateX(-50%)}}
 
 /* Show the handwritten word immediately, without the reveal animation or masks. */
 .write-word .ink-reveal{animation:none;stroke-dashoffset:0}
 .write-word .ink-letters text{mask:none}
+
+/* Enlarge only the initial S; keep its baseline aligned with the name. */
+.brand.signature .signature-capital{font-size:1.3em;line-height:0}
+
+/* One outlined SVG keeps the signature and star identical on every device. */
+.brand.signature .signature-logo{display:block;width:210px;height:auto;max-width:100%;transform:rotate(-3deg)}
+@media(max-width:760px){.brand.signature .signature-logo{width:187px}}
+
+
+/* Chunky letters with a fixed, gently uneven baseline. No animation. */
+.complex-blocky{display:inline-block;white-space:nowrap;font-family:"Arial Black",Arial,sans-serif;font-weight:900;letter-spacing:-.045em}
+.complex-blocky>span{display:inline-block;transform-origin:50% 80%}
+.complex-blocky>span:nth-child(1){transform:rotate(-7deg)}
+.complex-blocky>span:nth-child(2){transform:translateY(.045em) rotate(5deg)}
+.complex-blocky>span:nth-child(3){transform:translateY(-.027em) rotate(-4deg)}
+.complex-blocky>span:nth-child(4){transform:translateY(.036em) rotate(7deg)}
+.complex-blocky>span:nth-child(5){transform:translateY(-.036em) rotate(-6deg)}
+.complex-blocky>span:nth-child(6){transform:translateY(.018em) rotate(4deg)}
+.complex-blocky>span:nth-child(7){transform:rotate(-5deg)}
